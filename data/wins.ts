@@ -17,6 +17,26 @@ export type Win = {
 //   - ETHRome Oct 2025 (Alex Huou / Jeanne Louise Bassier / Elyes Ben Abid)
 export const wins: Win[] = [
   {
+    date: "September 2026",
+    year: "2026",
+    event: "ETHGlobal Tokyo",
+    placement: "Best Use of IDKit - World track",
+    category: "Hackathon",
+    team: "Elyes Ben Abid, Jakub Kliment",
+    prize: "2,500 USD",
+    link: "https://github.com/seyl3/pupille",
+  },
+  {
+    date: "September 2026",
+    year: "2026",
+    event: "ETHGlobal Tokyo",
+    placement: "2nd place - 1inch track",
+    category: "Hackathon",
+    team: "Hedi Kharouf, Amine Rahmouni",
+    prize: "1,500 USD",
+    link: "https://github.com/HediKharouf0/Wamia",
+  },
+  {
     date: "April 2026",
     year: "2026",
     event: "ETHGlobal Cannes",
