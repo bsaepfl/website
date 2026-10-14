@@ -25,6 +25,8 @@ export interface PastEvent {
   longDescription?: string
   stats: EventStat[]
   sponsors: string[]
+  // Show all sponsors together under one "Sponsors" heading instead of by tier
+  flatSponsors?: boolean
   highlights?: EventHighlight[]
   cohosts?: string[]
   location?: string
@@ -33,6 +35,33 @@ export interface PastEvent {
 }
 
 export const pastEvents: PastEvent[] = [
+  {
+    id: "the-hackathon-2026",
+    date: "October 2026",
+    title: "The Hackathon",
+    type: "Hackathon",
+    tagline: "200 builders, 49 projects, 33 hours",
+    description:
+      "33-hour hackathon with two sponsor tracks from Belem and Swissquote. 49 projects submitted by 200 participants.",
+    longDescription:
+      "On October 10-11, 200 participants gathered at EPFL to build for 33 hours. Teams shipped 49 projects across the Belem and Swissquote tracks, competing for a prize pool of over $5.6k.",
+    stats: [
+      { label: "Prize pool", value: "$5.6k+" },
+      { label: "Participants", value: "200" },
+      { label: "Projects", value: "49" },
+      { label: "Duration", value: "33h" },
+    ],
+    sponsors: ["Belem", "Swissquote"],
+    flatSponsors: true,
+    highlights: [
+      {
+        title: "Two sponsor tracks",
+        description:
+          "Teams built for the Belem track and the Swissquote track.",
+      },
+    ],
+    location: "EPFL - BC Building, Lausanne",
+  },
   {
     id: "stablecoin-payments-hackathon-2026",
     date: "March 2026",
