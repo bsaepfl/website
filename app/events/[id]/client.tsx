@@ -17,6 +17,7 @@ type Sponsor = {
 }
 
 type SponsorTierName =
+  | "Sponsors"
   | "Diamond"
   | "Gold"
   | "Silver"
@@ -35,6 +36,15 @@ type SponsorTier = {
 }
 
 const sponsorTiers: SponsorTier[] = [
+  // Used for every sponsor when an event sets flatSponsors
+  {
+    label: "Sponsors",
+    color: "text-zinc-200",
+    borderColor: "border-zinc-600/50",
+    bgColor: "bg-zinc-900/45",
+    logoSize: "w-44 sm:w-56 lg:w-64",
+    gridCols: "grid-cols-1 sm:grid-cols-2",
+  },
   {
     label: "Diamond",
     color: "text-zinc-50",
@@ -129,6 +139,12 @@ const sponsorCatalog: Record<string, Sponsor> = {
     logo: "/partners/swissquote.png",
     url: "https://www.swissquote.com",
     tier: "Bronze",
+  },
+  belem: {
+    name: "Belem Capital",
+    logo: "/partners/belem.png",
+    logoClass: "h-20 sm:h-24 w-auto",
+    tier: "Partners",
   },
   taurus: {
     name: "Taurus",
@@ -280,7 +296,7 @@ function normalizeSponsor(name: string) {
   return name.trim().toLowerCase()
 }
 
-function eventSponsorTiers(sponsors: string[]) {
+function eventSponsorTiers(sponsors: string[], flat = false) {
   const resolvedSponsors = sponsors.map((name) => {
     const sponsor = sponsorCatalog[normalizeSponsor(name)]
 
@@ -288,6 +304,7 @@ function eventSponsorTiers(sponsors: string[]) {
       name,
       tier: "Partners" as SponsorTierName,
       ...sponsor,
+      ...(flat && { tier: "Sponsors" as SponsorTierName }),
     }
   })
 
@@ -299,8 +316,8 @@ function eventSponsorTiers(sponsors: string[]) {
     .filter((tier) => tier.sponsors.length > 0)
 }
 
-function SponsorThanks({ sponsors }: { sponsors: string[] }) {
-  const tiers = eventSponsorTiers(sponsors)
+function SponsorThanks({ sponsors, flat }: { sponsors: string[]; flat?: boolean }) {
+  const tiers = eventSponsorTiers(sponsors, flat)
 
   return (
     <div className="w-full flex flex-col justify-center items-center bg-transparent relative pb-10">
@@ -555,7 +572,7 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
         )}
 
         {event.sponsors.length > 0 && (
-          <SponsorThanks sponsors={event.sponsors} />
+          <SponsorThanks sponsors={event.sponsors} flat={event.flatSponsors} />
         )}
 
         {event.cohosts && event.cohosts.length > 0 && (
