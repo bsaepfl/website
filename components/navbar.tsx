@@ -17,13 +17,11 @@ const navLinks = [
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const [introActive, setIntroActive] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
-      setIntroActive(document.documentElement.classList.contains('intro-active'))
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
@@ -39,8 +37,6 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [isMenuOpen])
 
-  const navHidden = introActive && !isMenuOpen
-
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-40 flex justify-center px-4 pt-4">
@@ -49,7 +45,7 @@ export default function Navbar() {
             group/nav relative w-full max-w-3xl rounded-full
             flex items-center justify-between
             transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)]
-            ${navHidden ? 'opacity-0 -translate-y-4' : 'opacity-100 translate-y-0'}
+            opacity-100 translate-y-0
             ${isScrolled
               ? 'px-2.5 py-2 md:pl-3 md:pr-2 bg-[#152237]/85 backdrop-blur-md border border-zinc-700/60 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5)]'
               : 'px-3 py-2.5 md:pl-4 md:pr-2.5 bg-[#152237]/70 backdrop-blur-sm border border-zinc-800/80'
@@ -77,7 +73,6 @@ export default function Navbar() {
               text-zinc-50 text-base font-medium tracking-wide
               transition-opacity duration-300
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zinc-300/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#152237]
-              ${navHidden ? 'pointer-events-none' : ''}
             `}
           >
             <span className="relative inline-flex items-center justify-center">
@@ -102,7 +97,6 @@ export default function Navbar() {
           <div
             className={`
               hidden md:flex items-center gap-0.5 transition-opacity duration-300
-              ${navHidden ? 'pointer-events-none' : ''}
             `}
           >
             {navLinks.map((link) => {
