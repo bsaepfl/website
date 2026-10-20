@@ -43,8 +43,11 @@ export default function Hero() {
     window.addEventListener('mousemove', handleMove, { passive: true })
 
     // Request permission on iOS 13+
-    const doe = DeviceOrientationEvent as any
-    if (typeof doe.requestPermission === 'function') {
+    // DeviceOrientationEvent is undefined in non-secure contexts (e.g. Safari over plain http)
+    const doe = (window as any).DeviceOrientationEvent
+    if (!doe) {
+      // No gyroscope support: mouse tracking only
+    } else if (typeof doe.requestPermission === 'function') {
       // Permission will be requested on first user tap
       const requestOnTap = () => {
         doe.requestPermission().then((state: string) => {
