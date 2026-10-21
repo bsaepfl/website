@@ -10,6 +10,12 @@ export interface EventLink {
   href: string
 }
 
+export interface EventGallery {
+  albumUrl?: string
+  photoCount?: number
+  previewImages: string[]
+}
+
 export interface EventHighlight {
   title: string
   description: string
@@ -31,7 +37,7 @@ export interface PastEvent {
   cohosts?: string[]
   location?: string
   links?: EventLink[]
-  photos?: string[]
+  gallery?: EventGallery
 }
 
 export const pastEvents: PastEvent[] = [
@@ -61,6 +67,15 @@ export const pastEvents: PastEvent[] = [
       },
     ],
     location: "EPFL - BC Building, Lausanne",
+    gallery: {
+      albumUrl: "https://photos.bsaepfl.ch/the-hackathon-2026",
+      photoCount: 114,
+      previewImages: [
+        "https://photos.bsaepfl.ch/photos/the-hackathon/the-hackathon-00001.jpg",
+        "https://photos.bsaepfl.ch/photos/the-hackathon/the-hackathon-00002.jpg",
+        "https://photos.bsaepfl.ch/photos/the-hackathon/the-hackathon-00003.jpg",
+      ],
+    },
   },
   {
     id: "stablecoin-payments-hackathon-2026",
@@ -208,11 +223,13 @@ export const pastEvents: PastEvent[] = [
       },
     ],
     location: "EPFL - BC Building, Lausanne",
-    photos: [
-      "/events/2/IMG_0492.JPG",
-      "/events/2/IMG_0578.JPG",
-      "/events/2/IMG_3494.JPG",
-    ],
+    gallery: {
+      previewImages: [
+        "/events/2/IMG_0492.JPG",
+        "/events/2/IMG_0578.JPG",
+        "/events/2/IMG_3494.JPG",
+      ],
+    },
   },
   {
     id: "privacy-verifiability-conference-2025",
@@ -249,11 +266,13 @@ export const pastEvents: PastEvent[] = [
     ],
     cohosts: ["Privacy Guardians", "CVA", "IEEE Blockchain"],
     location: "EPFL - BC Building, Lausanne",
-    photos: [
-      "/events/1/IMG_0492.JPG",
-      "/events/1/IMG_0578.JPG",
-      "/events/1/IMG_3494.JPG",
-    ],
+    gallery: {
+      previewImages: [
+        "/events/1/IMG_0492.JPG",
+        "/events/1/IMG_0578.JPG",
+        "/events/1/IMG_3494.JPG",
+      ],
+    },
   },
   {
     id: "sui-bsa-hackathon-2024",

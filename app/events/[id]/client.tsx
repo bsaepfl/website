@@ -549,24 +549,59 @@ export default function EventDetailClient({ event }: EventDetailClientProps) {
           </PageSection>
         )}
 
-        {event.photos && event.photos.length > 0 && (
+        {event.gallery && event.gallery.previewImages.length > 0 && (
           <PageSection>
-            <SectionTitle eyebrow="Gallery" title="Scenes from the event" />
-            <div className="mt-6 grid grid-cols-1 gap-3 md:grid-cols-3">
-              {event.photos.map((photo, index) => (
-                <div
-                  key={photo}
-                  className="relative aspect-[4/3] overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950/70"
+            <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+              <SectionTitle eyebrow="Photo archive" title="Scenes from the event" />
+              {event.gallery.albumUrl && (
+                <a
+                  href={event.gallery.albumUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-fit items-center gap-2 rounded-full border border-zinc-700 px-4 py-2 text-sm font-medium text-zinc-100 transition-colors hover:border-zinc-400 hover:bg-white/[0.05]"
                 >
+                  View all{event.gallery.photoCount ? ` ${event.gallery.photoCount}` : ""} photos
+                  <svg width="12" height="12" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                    <path d="M2 8L8 2M8 2H3.5M8 2V6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              )}
+            </div>
+            <div className="mt-7 grid grid-cols-2 gap-3 md:grid-cols-12">
+              {event.gallery.previewImages.map((photo, index) => {
+                const image = (
                   <Image
                     src={photo}
                     alt={`${event.title} photo ${index + 1}`}
                     fill
-                    sizes="(min-width: 768px) 33vw, 100vw"
-                    className="object-cover opacity-85 transition duration-500 hover:scale-[1.03] hover:opacity-100"
+                    sizes={index === 0 ? "(min-width: 768px) 58vw, 100vw" : "(min-width: 768px) 32vw, 50vw"}
+                    className="object-cover opacity-90 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
                   />
-                </div>
-              ))}
+                )
+
+                const className = `group relative overflow-hidden rounded-lg border border-zinc-800 bg-zinc-950/70 ${
+                  index === 0
+                    ? "col-span-2 aspect-[4/3] md:col-span-7 md:row-span-2 md:aspect-auto"
+                    : "aspect-[4/3] md:col-span-5"
+                }`
+
+                return event.gallery?.albumUrl ? (
+                  <a
+                    key={photo}
+                    href={event.gallery.albumUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={className}
+                    aria-label={`Open ${event.title} photo archive`}
+                  >
+                    {image}
+                  </a>
+                ) : (
+                  <div key={photo} className={className}>
+                    {image}
+                  </div>
+                )
+              })}
             </div>
           </PageSection>
         )}
