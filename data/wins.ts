@@ -57,6 +57,16 @@ export const wins: Win[] = [
     link: "https://github.com/youssef-jeddi/BSA-Capital",
   },
   {
+    date: "June 2026",
+    year: "2026",
+    event: "Uniswap Hook Incubator 9",
+    placement: "Uniswap Foundation Award",
+    category: "Hackathon",
+    team: "Youssef Jeddi",
+    prize: "1,000 USD",
+    link: "https://github.com/youssef-jeddi/backStop",
+  },
+  {
     date: "April 2026",
     year: "2026",
     event: "ETHGlobal Cannes",
