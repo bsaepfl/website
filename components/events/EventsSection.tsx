@@ -29,7 +29,7 @@ export default function EventsSection() {
         <div data-reveal className="rounded-lg border border-zinc-800 bg-zinc-900/50 overflow-hidden opacity-0">
           <iframe
             ref={iframeRef}
-            src="https://lu.ma/embed/calendar/cal-KuAvNkii7TFKkpK/events"
+            src="https://lu.ma/embed/calendar/cal-KuAvNkii7TFKkpK/events?lt=dark"
             className="w-full"
             style={{ height: '500px', border: 'none' }}
             allowFullScreen

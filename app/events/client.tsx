@@ -25,7 +25,7 @@ export default function EventsClient() {
             </h2>
             <div className="rounded-lg border border-zinc-800 bg-zinc-900/50 overflow-hidden">
               <iframe
-                src="https://lu.ma/embed/calendar/cal-KuAvNkii7TFKkpK/events?lt=upcoming"
+                src="https://lu.ma/embed/calendar/cal-KuAvNkii7TFKkpK/events?lt=upcoming&lt=dark"
                 className="w-full"
                 style={{ height: '600px', border: 'none' }}
                 allowFullScreen
