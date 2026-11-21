@@ -42,6 +42,51 @@ export interface PastEvent {
 
 export const pastEvents: PastEvent[] = [
   {
+    id: "binance-tour-2026",
+    date: "November 2026",
+    title: "Binance Tour: BSA",
+    type: "Workshop",
+    tagline: "A closer look at the next chapter of crypto adoption",
+    description:
+      "70 attendees joined the Binance team at EPFL for a keynote, live quiz, and evening of networking.",
+    longDescription:
+      "Binance visited EPFL for an evening hosted by BSA. 70 attendees heard the team's perspective on crypto adoption, took part in a live quiz, and connected with the Binance team and fellow students over food and drinks.",
+    stats: [
+      { label: "Attendees", value: "70" },
+      { label: "Format", value: "Keynote + quiz" },
+      { label: "Duration", value: "3h" },
+    ],
+    sponsors: ["Binance"],
+    highlights: [
+      {
+        title: "Crypto adoption keynote",
+        description:
+          "A Binance keynote on the current direction of crypto adoption and the opportunities ahead.",
+      },
+      {
+        title: "Live quiz",
+        description:
+          "Attendees tested their knowledge live, with Binance merchandise for the top performers.",
+      },
+      {
+        title: "An evening of connection",
+        description:
+          "Students met the Binance team, exchanged ideas, and explored new opportunities in crypto and beyond.",
+      },
+    ],
+    location: "EPFL - Room BC410/20, Lausanne",
+    links: [{ label: "Event page", href: "https://luma.com/q0awt375" }],
+    gallery: {
+      albumUrl: "https://photos.bsaepfl.ch/binance-tour-2026",
+      photoCount: 108,
+      previewImages: [
+        "https://photos.bsaepfl.ch/photos/binance-tour/PB180381.jpg",
+        "https://photos.bsaepfl.ch/photos/binance-tour/PB180192.jpg",
+        "https://photos.bsaepfl.ch/photos/binance-tour/PB180404.jpg",
+      ],
+    },
+  },
+  {
     id: "the-hackathon-2026",
     date: "October 2026",
     title: "The Hackathon",
