@@ -11,6 +11,18 @@ type Partner = {
 }
 
 const partnerCatalog: Record<string, Partner> = {
+  binance: {
+    name: "Binance",
+    href: "https://www.binance.com",
+    logo: "/partners/binance.svg",
+    logoClass: "h-11 md:h-14",
+  },
+  belem: {
+    name: "Belem Capital",
+    href: "https://www.belemcapital.com",
+    logo: "/partners/belem.png",
+    logoClass: "h-12 md:h-14",
+  },
   "alphaton capital": {
     name: "AlphaTON Capital",
     href: "https://alphatoncapital.com",

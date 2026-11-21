@@ -98,6 +98,13 @@ const sponsorTiers: SponsorTier[] = [
 ]
 
 const sponsorCatalog: Record<string, Sponsor> = {
+  binance: {
+    name: "Binance",
+    logo: "/partners/binance.svg",
+    logoClass: "h-16 sm:h-20 w-auto",
+    url: "https://www.binance.com",
+    tier: "Partners",
+  },
   "alphaton capital": {
     name: "AlphaTON Capital",
     logo: "/partners/alphaton.png",
@@ -144,6 +151,7 @@ const sponsorCatalog: Record<string, Sponsor> = {
     name: "Belem Capital",
     logo: "/partners/belem.png",
     logoClass: "h-20 sm:h-24 w-auto",
+    url: "https://www.belemcapital.com",
     tier: "Partners",
   },
   taurus: {
