@@ -10,10 +10,16 @@ export default function WinsClient() {
     items: wins.filter((w) => w.year === y),
   }))
 
+  // Approximate USD rates (Nov 2026), rounded.
+  const usdRates: Record<string, number> = { USD: 1, USDC: 1, EUR: 1.1, CHF: 1.22, TON: 1.4 }
+
   const totalPrize = wins
-    .map((w) => w.prize?.match(/\$?([\d,]+)/)?.[1]?.replace(/,/g, ""))
-    .filter(Boolean)
-    .reduce((acc, n) => acc + Number(n), 0)
+    .flatMap((w) => w.prize?.split(" + ") ?? [])
+    .map((part) => {
+      const [amount, currency] = part.split(" ")
+      return Number(amount.replace(/,/g, "")) * (usdRates[currency] ?? 0)
+    })
+    .reduce((acc, n) => acc + n, 0)
 
   const stats = [
     { value: String(wins.length), label: "Wins recorded" },

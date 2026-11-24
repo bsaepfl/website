@@ -17,6 +17,16 @@ export type Win = {
 //   - ETHRome Oct 2025 (Alex Huou / Jeanne Louise Bassier / Elyes Ben Abid)
 export const wins: Win[] = [
   {
+    date: "November 2026",
+    year: "2026",
+    event: "Italian XRPL Hackathon 2026",
+    placement: "1st place - XRPL Applications track",
+    category: "Hackathon",
+    team: "Stan Stelcher, Dylan Fehlmann, Hugo Germano",
+    prize: "2,000 EUR",
+    link: "https://github.com/FehlmannDy/Zecca",
+  },
+  {
     date: "October 2026",
     year: "2026",
     event: "Ledger Op3n Hackathon",
@@ -159,7 +169,7 @@ export const wins: Win[] = [
   {
     date: "October 2025",
     year: "2025",
-    event: "XRPL Rome",
+    event: "Italian XRPL Hackathon 2025",
     placement: "1st place - XRPL track",
     category: "Hackathon",
     team: "Stan Stelcher, Alexandre Huou, Alexandre Mourot",
