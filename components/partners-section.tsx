@@ -73,8 +73,8 @@ const partnerCatalog: Record<string, Partner> = {
   "mina foundation": {
     name: "Mina Foundation",
     href: "https://minaprotocol.com",
-    logo: "/partners/mina-clean.png",
-    logoClass: "h-12 md:h-14",
+    logo: "/partners/mina-wordmark.svg",
+    logoClass: "h-10 md:h-12 invert",
   },
   arbitrum: {
     name: "Arbitrum",
