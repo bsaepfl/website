@@ -69,6 +69,7 @@ const partnerCatalog: Record<string, Partner> = {
     name: "Sui Foundation",
     href: "https://sui.io",
     logo: "/partners/sui-logo-sea.png",
+    logoClass: "h-14 md:h-16",
   },
   "mina foundation": {
     name: "Mina Foundation",
@@ -80,21 +81,25 @@ const partnerCatalog: Record<string, Partner> = {
     name: "Arbitrum",
     href: "https://arbitrum.io",
     logo: "https://cryptologos.cc/logos/arbitrum-arb-logo.png",
+    logoClass: "h-14 md:h-16",
   },
   starknet: {
     name: "Starknet",
     href: "https://www.starknet.io",
     logo: "https://cryptologos.cc/logos/starknet-token-strk-logo.png",
+    logoClass: "h-14 md:h-16",
   },
   "hedera hashgraph association": {
     name: "The Hashgraph Association",
     href: "https://www.hashgraph.swiss/",
     logo: "/partners/hedera.png",
+    logoClass: "h-14 md:h-16",
   },
   "hashgraph association": {
     name: "The Hashgraph Association",
     href: "https://www.hashgraph.swiss/",
     logo: "/partners/hedera.png",
+    logoClass: "h-14 md:h-16",
   },
   "aleph zero": {
     name: "Aleph Zero",
