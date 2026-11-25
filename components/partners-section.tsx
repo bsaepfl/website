@@ -31,14 +31,14 @@ const partnerCatalog: Record<string, Partner> = {
   ledger: {
     name: "Ledger",
     href: "https://www.ledger.com",
-    logo: "/partners/ledger.png",
-    logoClass: "h-16 md:h-20",
+    logo: "/partners/ledger-trimmed.png",
+    logoClass: "h-10 md:h-12",
   },
   "xrpl commons": {
     name: "XRPL Commons",
     href: "https://xrplcommons.org",
-    logo: "/partners/xrpl.png",
-    logoClass: "h-16 md:h-20",
+    logo: "/partners/xrpl-trimmed.png",
+    logoClass: "h-10 md:h-12",
   },
   ens: {
     name: "ENS",
@@ -73,7 +73,7 @@ const partnerCatalog: Record<string, Partner> = {
   "mina foundation": {
     name: "Mina Foundation",
     href: "https://minaprotocol.com",
-    logo: "/partners/mina.png",
+    logo: "/partners/mina-clean.png",
     logoClass: "h-12 md:h-14",
   },
   arbitrum: {
@@ -99,7 +99,14 @@ const partnerCatalog: Record<string, Partner> = {
   "aleph zero": {
     name: "Aleph Zero",
     href: "https://alephzero.org/",
-    logo: "/partners/aleph.png",
+    logo: "/partners/aleph-clean.png",
+    logoClass: "h-auto w-36 md:w-40",
+  },
+  arc: {
+    name: "Arc",
+    href: "https://www.arc.network/",
+    logo: "/partners/arc.svg",
+    logoClass: "h-10 md:h-12",
   },
   syz: {
     name: "Syz Bank",
@@ -139,7 +146,7 @@ const partnerCatalog: Record<string, Partner> = {
   },
 }
 
-const extraPartnerKeys = ["arbitrum", "starknet"]
+const extraPartnerKeys = ["arbitrum", "starknet", "arc"]
 
 const partners = Array.from(
   new Map(
@@ -172,9 +179,7 @@ export default function PartnersSection() {
         </div>
       </div>
 
-      <div className="overflow-hidden relative space-y-sm">
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#1d2e4a] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#1d2e4a] to-transparent z-10 pointer-events-none" />
+      <div className="overflow-hidden relative space-y-sm [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
 
         {rows.map((row, rowIndex) => {
           const tickerItems = [...row, ...row]
@@ -198,7 +203,7 @@ export default function PartnersSection() {
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      className={`${partner.logoClass ?? "h-8 md:h-10"} max-w-[150px] md:max-w-[180px] w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 brightness-110`}
+                      className={`${partner.logoClass ?? "h-8 md:h-10"} max-w-[150px] md:max-w-[180px] object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-200 brightness-110`}
                     />
                   ) : (
                     <span className="text-zinc-300 text-lg md:text-xl font-semibold tracking-wide opacity-80 group-hover:opacity-100 transition-opacity duration-200">

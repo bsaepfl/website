@@ -26,10 +26,7 @@ export default function UniversitiesSection() {
       </div>
 
       {/* Full-width ticker */}
-      <div className="overflow-hidden relative">
-        {/* Fade edges */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-[#1d2e4a] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-[#1d2e4a] to-transparent z-10 pointer-events-none" />
+      <div className="overflow-hidden relative [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)]">
 
         <div
           className="marquee-left marquee-pause-on-hover flex gap-lg w-max will-change-transform"
