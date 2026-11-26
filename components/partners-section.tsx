@@ -14,6 +14,8 @@ const partnerCatalog: Record<string, Partner> = {
   zuitzerland: {
     name: "Zuitzerland",
     href: "https://www.zuitzerland.ch/",
+    logo: "/partners/zuitzerland.jpg",
+    logoClass: "h-12 md:h-14 rounded-full",
   },
   binance: {
     name: "Binance",
