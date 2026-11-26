@@ -45,10 +45,11 @@ export const startups: StartupType[] = [
     imgClass: "max-h-20",
   },
   {
-    img: "/startups/zyfai.png",
+    img: "/startups/zyfai-trimmed.png",
     title: "AI-powered DeFi portfolio management:",
     description:
       "Zyfai leverages artificial intelligence to optimize DeFi yield strategies and portfolio management. Raised $3M in seed funding from Marc Zeller (Aave), Francesco Andreoli (MetaMask), Everstake, Tenzor, and Brilliance Ventures.",
     link: "https://www.zyf.ai/",
+    imgClass: "h-20 w-auto max-w-full",
   }
-]; 
+];
