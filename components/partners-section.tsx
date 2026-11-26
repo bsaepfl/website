@@ -11,6 +11,10 @@ type Partner = {
 }
 
 const partnerCatalog: Record<string, Partner> = {
+  zuitzerland: {
+    name: "Zuitzerland",
+    href: "https://www.zuitzerland.ch/",
+  },
   binance: {
     name: "Binance",
     href: "https://www.binance.com",
@@ -151,7 +155,7 @@ const partnerCatalog: Record<string, Partner> = {
   },
 }
 
-const extraPartnerKeys = ["arbitrum", "starknet", "arc"]
+const extraPartnerKeys = ["arbitrum", "starknet", "arc", "zuitzerland"]
 
 const partners = Array.from(
   new Map(
