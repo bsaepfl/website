@@ -6,6 +6,7 @@ const universities = [
   { name: "HEC Lausanne", fullName: "Faculty of Business and Economics, UNIL", href: "https://hec.unil.ch", logo: "/universities/hec-lausanne.png" },
   { name: "HEIG-VD", fullName: "School of Engineering and Management", href: "https://heig-vd.ch", logo: "/universities/heig-vd.png" },
   { name: "HSG", fullName: "University of St. Gallen", href: "https://unisg.ch", logo: "/universities/hsg.svg" },
+  { name: "EHL", fullName: "EHL Hospitality Business School", href: "https://www.ehl.edu/", logo: "/universities/ehl.png" },
 ]
 
 // Double the array for seamless loop
