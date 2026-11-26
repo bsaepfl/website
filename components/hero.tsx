@@ -89,20 +89,6 @@ export default function Hero() {
       opacity: [0, 1], translateY: [16, 0], duration: 500, delay: stagger(80),
     }, 1300)
 
-    // Typewriter effect on subtitle
-    const typeText = "Connecting students, founders, and industry through blockchain at EPFL. Join us for workshops, conferences, hackathons and more."
-    const target = document.querySelector<HTMLElement>('[data-typewriter-text]')
-    if (target) {
-      let i = 0
-      const typeInterval = setInterval(() => {
-        if (i <= typeText.length) {
-          target.textContent = typeText.slice(0, i)
-          i++
-        } else {
-          clearInterval(typeInterval)
-        }
-      }, 35)
-    }
   }, [])
 
   // Counting stats when visible
@@ -174,9 +160,8 @@ export default function Hero() {
               <br />
               at EPFL
             </h1>
-            <p data-hero-text data-typewriter className="text-zinc-400 text-lead font-serif max-w-[50ch] mb-xl opacity-0">
-              <span data-typewriter-text></span>
-              <span className="inline-block w-[2px] h-[1.1em] bg-zinc-400 ml-0.5 align-middle animate-pulse" />
+            <p data-hero-text className="text-zinc-400 text-lead font-serif max-w-[50ch] mb-xl opacity-0">
+              Connecting students, founders, and industry through blockchain at EPFL. Join us for workshops, conferences, hackathons and more.
             </p>
             <div data-hero-text className="flex flex-wrap gap-xs opacity-0">
               <Link
