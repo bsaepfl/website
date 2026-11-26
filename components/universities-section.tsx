@@ -45,7 +45,7 @@ export default function UniversitiesSection() {
               <img
                 src={uni.logo}
                 alt={uni.fullName}
-                className="h-9 md:h-12 w-auto object-contain opacity-75 group-hover:opacity-100 transition-opacity duration-200 brightness-110"
+                className={`${uni.name === "HEC Lausanne" ? "h-14 md:h-16" : "h-9 md:h-12"} w-auto object-contain opacity-75 group-hover:opacity-100 transition-opacity duration-200 brightness-110`}
               />
             </a>
           ))}
